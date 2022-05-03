@@ -29,7 +29,9 @@ namespace TEST
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signup));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
@@ -42,7 +44,10 @@ namespace TEST
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.gunaPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -50,12 +55,27 @@ namespace TEST
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.YellowGreen;
+            this.gunaPanel1.Controls.Add(this.panel2);
             this.gunaPanel1.Controls.Add(this.gunaPictureBox1);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(275, 516);
             this.gunaPanel1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.gunaLabel5);
+            this.panel1.Controls.Add(this.gunaLabel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(275, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(388, 57);
+            this.panel1.TabIndex = 2;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown_Event);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove_Event);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp_Event);
             // 
             // gunaPictureBox1
             // 
@@ -84,9 +104,9 @@ namespace TEST
             // gunaPanel2
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.gunaPanel2.Location = new System.Drawing.Point(331, 229);
+            this.gunaPanel2.Location = new System.Drawing.Point(336, 230);
             this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(288, 5);
+            this.gunaPanel2.Size = new System.Drawing.Size(283, 5);
             this.gunaPanel2.TabIndex = 2;
             this.gunaPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaPanel2_Paint);
             // 
@@ -196,7 +216,7 @@ namespace TEST
             // 
             this.gunaPanel3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.gunaPanel3.Controls.Add(this.gunaTextBox3);
-            this.gunaPanel3.Location = new System.Drawing.Point(352, 319);
+            this.gunaPanel3.Location = new System.Drawing.Point(355, 319);
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Size = new System.Drawing.Size(256, 5);
             this.gunaPanel3.TabIndex = 3;
@@ -205,7 +225,7 @@ namespace TEST
             // 
             this.gunaLabel3.AllowDrop = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(359, 172);
+            this.gunaLabel3.Location = new System.Drawing.Point(362, 172);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(235, 23);
             this.gunaLabel3.TabIndex = 7;
@@ -216,7 +236,7 @@ namespace TEST
             // 
             this.gunaLabel4.AllowDrop = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(362, 261);
+            this.gunaLabel4.Location = new System.Drawing.Point(365, 261);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(235, 23);
             this.gunaLabel4.TabIndex = 8;
@@ -227,20 +247,42 @@ namespace TEST
             // 
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gunaLabel2.Image = global::TEST.Properties.Resources.icons8_exit_26;
-            this.gunaLabel2.Location = new System.Drawing.Point(622, 9);
+            this.gunaLabel2.Location = new System.Drawing.Point(348, 9);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(29, 33);
             this.gunaLabel2.TabIndex = 3;
             this.gunaLabel2.Click += new System.EventHandler(this.gunaLabel2_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(275, 57);
+            this.panel2.TabIndex = 3;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown_Event1);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove_Event1);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp_Event1);
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel5.Image = ((System.Drawing.Image)(resources.GetObject("gunaLabel5.Image")));
+            this.gunaLabel5.Location = new System.Drawing.Point(293, 8);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(49, 34);
+            this.gunaLabel5.TabIndex = 9;
+            this.gunaLabel5.Click += new System.EventHandler(this.gunaLabel5_Click);
             // 
             // signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 516);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
-            this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaPanel5);
             this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.gunaTextBox2);
@@ -256,6 +298,7 @@ namespace TEST
             this.Text = "signup";
             this.Load += new System.EventHandler(this.signup_Load);
             this.gunaPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.gunaPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -277,5 +320,8 @@ namespace TEST
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI.WinForms.GunaLabel gunaLabel5;
     }
 }

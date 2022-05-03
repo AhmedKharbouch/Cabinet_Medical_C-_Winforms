@@ -12,13 +12,17 @@ namespace TEST
 {
     public partial class Form1 : Form
     {
-        bool drag = false;
-        Point start_point = new Point(0, 0);
 
+        bool mouseDown;
+        private Point offset;
         public Form1()
         {
             InitializeComponent();
+          
+
+
         }
+
 
         private void gunaLabel1_Click(object sender, EventArgs e)
         {
@@ -98,28 +102,62 @@ namespace TEST
             
         }
 
-        private void gunaPanel2_MouseDown(object sender, MouseEventArgs e)
+      
+
+       
+        private void mouseDown_Event(object sender, MouseEventArgs e)
         {
-            drag = true;
-            start_point = new Point(e.X, e.Y);
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
         }
 
-        private void gunaPanel2_MouseMove(object sender, MouseEventArgs e)
+        private void mouseMove_Event(object sender, MouseEventArgs e)
         {
-            if (drag)
+            if (mouseDown == true)
             {
-                Point p = PointToScreen(e.Location);
-                this.Location = new Point(p.X - start_point.X, p.Y - start_point.Y);
-
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
             }
         }
 
-
-
-        private void gunaPanel2_MouseUp(object sender, MouseEventArgs e)
+        private void mouseUp_Event(object sender, MouseEventArgs e)
         {
-            drag = false;
-           
+            mouseDown = false;
+        }
+
+        private void mouseDown_Event1(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+        private void mouseMove_Event1(object sender, MouseEventArgs e)
+        {
+            if (mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+        private void mouseUp_Event1(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void gunaLabel3_Click(object sender, EventArgs e)
+        {
+
+            if(WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Minimized;
+            }
+            else if(WindowState== FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
+
+
         }
     }
 }

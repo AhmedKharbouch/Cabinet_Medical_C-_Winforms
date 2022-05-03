@@ -29,6 +29,7 @@ namespace TEST
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
@@ -43,6 +44,7 @@ namespace TEST
             this.medicament1 = new TEST.medicament();
             this.medecin1 = new TEST.medecin();
             this.accueil1 = new TEST.accueil();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +61,7 @@ namespace TEST
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(175, 588);
+            this.gunaPanel1.Size = new System.Drawing.Size(182, 588);
             this.gunaPanel1.TabIndex = 0;
             // 
             // gunaButton5
@@ -91,14 +93,18 @@ namespace TEST
             // gunaLabel2
             // 
             this.gunaLabel2.BackColor = System.Drawing.Color.YellowGreen;
+            this.gunaLabel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.SystemColors.Control;
             this.gunaLabel2.Location = new System.Drawing.Point(0, 0);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(175, 47);
+            this.gunaLabel2.Size = new System.Drawing.Size(182, 47);
             this.gunaLabel2.TabIndex = 6;
             this.gunaLabel2.Text = "A5H";
             this.gunaLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gunaLabel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown_Event1);
+            this.gunaLabel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove_Event1);
+            this.gunaLabel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp_Event1);
             // 
             // gunaButton4
             // 
@@ -207,12 +213,16 @@ namespace TEST
             // gunaPanel2
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.YellowGreen;
+            this.gunaPanel2.Controls.Add(this.gunaLabel3);
             this.gunaPanel2.Controls.Add(this.gunaLabel1);
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaPanel2.Location = new System.Drawing.Point(175, 0);
+            this.gunaPanel2.Location = new System.Drawing.Point(182, 0);
             this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(968, 47);
+            this.gunaPanel2.Size = new System.Drawing.Size(961, 47);
             this.gunaPanel2.TabIndex = 1;
+            this.gunaPanel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown_Event);
+            this.gunaPanel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove_Event);
+            this.gunaPanel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp_Event);
             // 
             // gunaLabel1
             // 
@@ -226,39 +236,55 @@ namespace TEST
             // 
             // consultation1
             // 
-            this.consultation1.Location = new System.Drawing.Point(174, 46);
+            this.consultation1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consultation1.Location = new System.Drawing.Point(182, 47);
             this.consultation1.Name = "consultation1";
-            this.consultation1.Size = new System.Drawing.Size(969, 542);
+            this.consultation1.Size = new System.Drawing.Size(961, 541);
             this.consultation1.TabIndex = 6;
+
             // 
             // patient1
             // 
             this.patient1.BackColor = System.Drawing.SystemColors.Control;
-            this.patient1.Location = new System.Drawing.Point(174, 46);
+            this.patient1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.patient1.Location = new System.Drawing.Point(182, 47);
             this.patient1.Name = "patient1";
-            this.patient1.Size = new System.Drawing.Size(969, 542);
+            this.patient1.Size = new System.Drawing.Size(961, 541);
             this.patient1.TabIndex = 5;
             // 
             // medicament1
             // 
-            this.medicament1.Location = new System.Drawing.Point(174, 46);
+            this.medicament1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.medicament1.Location = new System.Drawing.Point(182, 47);
             this.medicament1.Name = "medicament1";
-            this.medicament1.Size = new System.Drawing.Size(969, 542);
+            this.medicament1.Size = new System.Drawing.Size(961, 541);
             this.medicament1.TabIndex = 4;
             // 
             // medecin1
             // 
-            this.medecin1.Location = new System.Drawing.Point(174, 46);
+            this.medecin1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.medecin1.Location = new System.Drawing.Point(182, 47);
             this.medecin1.Name = "medecin1";
-            this.medecin1.Size = new System.Drawing.Size(969, 542);
+            this.medecin1.Size = new System.Drawing.Size(961, 541);
             this.medecin1.TabIndex = 3;
             // 
             // accueil1
             // 
-            this.accueil1.Location = new System.Drawing.Point(174, 46);
+            this.accueil1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accueil1.Location = new System.Drawing.Point(182, 47);
             this.accueil1.Name = "accueil1";
-            this.accueil1.Size = new System.Drawing.Size(969, 542);
+            this.accueil1.Size = new System.Drawing.Size(961, 541);
             this.accueil1.TabIndex = 2;
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel3.Image = ((System.Drawing.Image)(resources.GetObject("gunaLabel3.Image")));
+            this.gunaLabel3.Location = new System.Drawing.Point(845, 9);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(49, 34);
+            this.gunaLabel3.TabIndex = 3;
+            this.gunaLabel3.Click += new System.EventHandler(this.gunaLabel3_Click);
             // 
             // Form1
             // 
@@ -299,6 +325,7 @@ namespace TEST
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private consultation consultation1;
         private Guna.UI.WinForms.GunaButton gunaButton5;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
     }
 }
 

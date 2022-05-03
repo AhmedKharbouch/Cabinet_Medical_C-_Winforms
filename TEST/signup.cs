@@ -13,6 +13,9 @@ namespace TEST
 {
     public partial class signup : Form
     {
+        bool mouseDown;
+        private Point offset;
+
         public signup()
         {
             InitializeComponent();
@@ -71,7 +74,7 @@ namespace TEST
             gunaPanel2.BackColor = Color.CornflowerBlue;
             /****************************************/
             gunaPanel3.Width = 63;
-            gunaPanel3.Location = new Point(445, 319);
+            gunaPanel3.Location = new Point(450, 319);
             gunaPanel3.BackColor = Color.YellowGreen;
         }
 
@@ -122,6 +125,61 @@ namespace TEST
             {
                 MessageBox.Show("textbox vide");
             }
+        }
+
+        private void mouseDown_Event(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void mouseMove_Event(object sender, MouseEventArgs e)
+        {
+            if (mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void mouseUp_Event(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void mouseDown_Event1(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void mouseMove_Event1(object sender, MouseEventArgs e)
+        {
+            if (mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void mouseUp_Event1(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void gunaLabel5_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Minimized;
+            }
+            else if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
+
         }
     }
 }

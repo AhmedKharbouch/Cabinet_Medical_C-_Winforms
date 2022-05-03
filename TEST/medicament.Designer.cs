@@ -167,6 +167,7 @@ namespace TEST
             this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gunaDataGridView1.Location = new System.Drawing.Point(182, 255);
             this.gunaDataGridView1.Name = "gunaDataGridView1";
+            this.gunaDataGridView1.ReadOnly = true;
             this.gunaDataGridView1.RowHeadersVisible = false;
             this.gunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gunaDataGridView1.Size = new System.Drawing.Size(623, 237);
@@ -185,7 +186,7 @@ namespace TEST
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.Height = 27;
-            this.gunaDataGridView1.ThemeStyle.ReadOnly = false;
+            this.gunaDataGridView1.ThemeStyle.ReadOnly = true;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
